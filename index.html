@@ -34,27 +34,47 @@
   <!-- ═══════ BACKGROUND CANVAS ═══════ -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- ═══════ NAVBAR ═══════ -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">C</span>
-        Critix Client
-      </a>
-
-      <button class="nav-toggle" aria-label="Menu" id="nav-toggle">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#features">Características</a></li>
-        <li><a href="#downloads">Descargas</a></li>
-        <li><a href="#security">Seguridad</a></li>
-        <li><a href="#support">Apoyar</a></li>
-        <li><a href="#downloads" class="nav-cta">Descargar</a></li>
-      </ul>
+  <!-- ═══════ HEADER & NAVBAR ═══════ -->
+  <header class="site-header" id="site-header">
+    <!-- Top Announcement Bar -->
+    <div class="top-announcement" id="top-announcement">
+      <div class="container">
+        <div class="announcement-content">
+          <span class="announcement-tag">NUEVA VERSIÓN</span>
+          <span class="announcement-text">🎉 ¡<strong>Critix Client v2.4.8</strong> ya disponible con máxima optimización y mejoras!</span>
+          <a href="#downloads" class="announcement-action">
+            Descargar v2.4.8
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
-  </nav>
+
+    <!-- Main Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">C</span>
+          Critix Client
+        </a>
+
+        <button class="nav-toggle" aria-label="Menu" id="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#features">Características</a></li>
+          <li><a href="#downloads">Descargas</a></li>
+          <li><a href="#security">Seguridad</a></li>
+          <li><a href="#support">Apoyar</a></li>
+          <li><a href="#downloads" class="nav-cta">Descargar v2.4.8</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
@@ -62,7 +82,7 @@
       <div class="hero-content">
         <div class="hero-badge reveal" data-delay="0">
           <span class="pulse"></span>
-          Versión 2.1.0 — Disponible Ahora
+          ¡Versión 2.4.8 — Disponible Ahora!
         </div>
 
         <h1 class="reveal" data-delay="100">
@@ -105,7 +125,7 @@
               <span class="mockup-dot"></span>
               <span class="mockup-dot"></span>
               <span class="mockup-dot"></span>
-              <span class="mockup-titlebar-text">Critix Client v2.1.0</span>
+              <span class="mockup-titlebar-text">Critix Client v2.4.8</span>
             </div>
             <div class="mockup-body">
               <div class="mockup-sidebar">
@@ -201,22 +221,59 @@
   <section class="downloads" id="downloads">
     <div class="container">
       <div class="downloads-header">
-        <span class="section-tag reveal">↓ Descargas</span>
-        <h2 class="section-title reveal" data-delay="100">Obtén Critix Client</h2>
-        <p class="section-subtitle reveal" data-delay="200">Elige la versión que mejor se adapte a tu forma de jugar.
-          Ambas son gratuitas y contienen exactamente el mismo launcher.</p>
+        <span class="section-tag reveal">↓ Descargas — Última Versión 2.4.8</span>
+        <h2 class="section-title reveal" data-delay="100">Obtén Critix Client v2.4.8</h2>
+        <p class="section-subtitle reveal" data-delay="200">Elige el formato que mejor se adapte a ti. Ambas opciones incluyen todas las mejoras y optimizaciones de la versión 2.4.8.</p>
+      </div>
+
+      <!-- Update Highlights Box -->
+      <div class="update-banner reveal" data-delay="150">
+        <div class="update-banner-header">
+          <div class="update-badge">
+            <span class="pulse-dot"></span>
+            NOVEDADES DE LA VERSIÓN 2.4.8
+          </div>
+          <span class="update-date">Actualización Reciente</span>
+        </div>
+        <div class="update-features">
+          <div class="update-item">
+            <span class="update-icon">🚀</span>
+            <div>
+              <strong>Rendimiento Máximo</strong>
+              <p>Optimizaciones internas para una respuesta más rápida y mayor tasa de FPS.</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-icon">🛡️</span>
+            <div>
+              <strong>Estabilidad & Fixes</strong>
+              <p>Corrección de fallos y mayor compatibilidad con las últimas versiones de Minecraft.</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-icon">⚡</span>
+            <div>
+              <strong>Descarga Directa</strong>
+              <p>Paquetes completos .zip actualizados y listos para ejecutar al instante.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="downloads-grid">
         <!-- Installer -->
         <div class="download-card recommended reveal" data-delay="0">
           <div class="download-icon">📦</div>
+          <div class="card-version-tag">Recomendado</div>
           <h3>Critix Client Setup</h3>
-          <span class="download-version">v2.1.0 — Instalador (Windows)</span>
-          <p>La opción recomendada. Un instalador automático y fácil de usar que configura Critix Client directamente en
-            tu sistema, crea accesos directos en el escritorio y gestiona las actualizaciones futuras de forma
-            automática.</p>
-          <a href="./Critix-Client-Setup-2.1.0.zip" download="Critix-Client-Setup-2.1.0.zip" class="download-btn"
+          <span class="download-version">v2.4.8 — Instalador (Windows)</span>
+          <p>Un instalador automático que configura Critix Client en tu sistema, crea accesos directos y prepara tu entorno de juego en un solo clic.</p>
+          <div class="download-meta">
+            <span class="meta-tag">Windows 10/11</span>
+            <span class="meta-tag">103 MB</span>
+            <span class="meta-tag">.zip</span>
+          </div>
+          <a href="./Critix-Client-Setup-2.4.8.zip" download="Critix-Client-Setup-2.4.8.zip" class="download-btn"
             id="download-setup">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
@@ -224,18 +281,23 @@
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Descargar Instalador
+            Descargar Instalador v2.4.8
           </a>
         </div>
 
         <!-- Portable -->
         <div class="download-card reveal" data-delay="150">
           <div class="download-icon">📁</div>
+          <div class="card-version-tag portable">Sin Instalación</div>
           <h3>Critix Client Portable</h3>
-          <span class="download-version">v2.1.0 — Portable (Windows)</span>
-          <p>Ideal para mayor flexibilidad. Ejecuta el launcher directamente desde cualquier carpeta o unidad USB sin
-            necesidad de instalar archivos permanentes en el registro de tu sistema. Solo descomprimir y jugar.</p>
-          <a href="./Critix-Client-2.1.0-Portable.zip" download="Critix-Client-2.1.0-Portable.zip" class="download-btn"
+          <span class="download-version">v2.4.8 — Portable (Windows)</span>
+          <p>Ejecuta el launcher directamente desde cualquier carpeta o memoria USB sin alterar registros ni instalar archivos en el sistema. Extraer y jugar.</p>
+          <div class="download-meta">
+            <span class="meta-tag">Windows 10/11</span>
+            <span class="meta-tag">103 MB</span>
+            <span class="meta-tag">.zip</span>
+          </div>
+          <a href="./Critix-Client-2.4.8-Portable.zip" download="Critix-Client-2.4.8-Portable.zip" class="download-btn"
             id="download-portable">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
@@ -243,7 +305,7 @@
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Descargar Portable
+            Descargar Portable v2.4.8
           </a>
         </div>
       </div>

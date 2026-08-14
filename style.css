@@ -133,21 +133,94 @@ button { font-family: inherit; cursor: pointer; border: none; }
   pointer-events: none;
 }
 
-/* ---------- NAVBAR ---------- */
-.navbar {
+/* ---------- SITE HEADER & NAVBAR ---------- */
+.site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+}
+
+.top-announcement {
+  background: linear-gradient(90deg, #000f80 0%, #001aff 40%, #5f27cd 70%, #001aff 100%);
+  background-size: 250% 100%;
+  animation: announcementGlow 8s ease infinite;
+  padding: .45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+@keyframes announcementGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  font-size: .82rem;
+  color: #fff;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.announcement-tag {
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.4);
+  padding: .15rem .6rem;
+  border-radius: 99px;
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.announcement-text {
+  font-size: .83rem;
+  font-weight: 400;
+}
+
+.announcement-text strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.announcement-action {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  padding: .2rem .75rem;
+  border-radius: 99px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #fff;
+  transition: all .25s ease;
+}
+
+.announcement-action:hover {
+  background: #ffffff;
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.navbar {
+  position: relative;
   padding: .8rem 0;
-  background: rgba(5, 5, 5, .65);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(5, 5, 5, .7);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid rgba(255,255,255,.04);
   transition: background .4s, box-shadow .4s;
 }
 .navbar.scrolled {
-  background: rgba(5, 5, 5, .88);
-  box-shadow: 0 4px 30px rgba(0,0,0,.4);
+  background: rgba(5, 5, 5, .92);
+  box-shadow: 0 4px 30px rgba(0,0,0,.5);
 }
 .navbar .container {
   display: flex;
@@ -240,7 +313,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 8rem 0 4rem;
+  padding: 9.5rem 0 4rem;
   overflow: hidden;
 }
 .hero::before {
@@ -589,9 +662,95 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .downloads-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 .downloads-header .section-subtitle { margin: 0 auto; }
+
+/* Update Highlights Banner */
+.update-banner {
+  background: linear-gradient(135deg, rgba(0, 26, 255, 0.1) 0%, rgba(95, 39, 205, 0.08) 100%);
+  border: 1px solid rgba(0, 26, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin: 0 auto 3rem;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25), 0 0 25px rgba(0, 26, 255, 0.08);
+}
+
+.update-banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: .85rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.update-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-display);
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  letter-spacing: .08em;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #28c840;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #28c840;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.update-date {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.update-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.update-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+.update-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  padding-top: .1rem;
+}
+
+.update-item strong {
+  display: block;
+  font-size: .88rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.update-item p {
+  font-size: .8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
 
 .downloads-grid {
   display: grid;
@@ -612,8 +771,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 .download-card.recommended {
-  border-color: rgba(0,26,255,.3);
-  box-shadow: 0 0 40px rgba(0,26,255,.08);
+  border-color: rgba(0,26,255,.35);
+  box-shadow: 0 0 40px rgba(0,26,255,.1);
 }
 .download-card.recommended::after {
   content: '★ Recomendado';
@@ -644,32 +803,74 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background: var(--accent-soft);
   border: 1px solid rgba(0,26,255,.15);
   border-radius: var(--radius-md);
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1rem;
   font-size: 1.6rem;
 }
+
+.card-version-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: var(--accent-soft);
+  border: 1px solid rgba(0,26,255,.2);
+  padding: .2rem .65rem;
+  border-radius: 99px;
+  margin-bottom: .8rem;
+}
+
+.card-version-tag.portable {
+  color: #c084fc;
+  background: rgba(124,58,237,.12);
+  border-color: rgba(124,58,237,.25);
+}
+
 .download-card h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: .4rem;
+  margin-bottom: .3rem;
 }
 .download-version {
-  font-size: .78rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  font-weight: 500;
+  font-size: .8rem;
+  color: var(--accent-light);
+  margin-bottom: .85rem;
+  font-weight: 600;
+  display: block;
 }
 .download-card p {
   font-size: .9rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.75rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
 }
+
+.download-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-tag {
+  font-size: .7rem;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
 .download-btn {
   display: inline-flex;
   align-items: center;
   gap: .6rem;
-  padding: .8rem 2rem;
+  padding: .85rem 1.8rem;
   background: var(--accent);
   color: #fff;
   font-family: var(--font-display);
@@ -879,6 +1080,14 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
   .features-grid { grid-template-columns: 1fr; }
   .downloads-grid { grid-template-columns: 1fr; }
+
+  .top-announcement { padding: .4rem .5rem; }
+  .announcement-content { font-size: .75rem; gap: .4rem; }
+  .announcement-tag { font-size: .62rem; padding: .1rem .45rem; }
+  .announcement-action { font-size: .7rem; padding: .15rem .55rem; }
+
+  .update-banner { padding: 1.25rem 1.2rem; margin-bottom: 2rem; }
+  .update-features { grid-template-columns: 1fr; gap: 1rem; }
 
   .security-box { padding: 2rem 1.5rem; }
   .hero h1 { font-size: 2.2rem; }
